@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+.image{
+max-width:100%;
+height:auto;
+background:url({% static 'image\abc.jpg' %});
+background-repeat:no-repeat;
+background-position:center;
+background-size:cover;
+}
+</style>
+
+
+<div class="image">
+    <div class="transparentbox">
+        <p>Salary Management System</p>
+    </div>
+</div>
+<div class="container mt-5 mb-5">
+    <h4 class="text-center text-darger mt-5 mb-5">Just 4 Step To Follow</h4>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="box1">
+                <p class="halfcircle"><i class="text-center fas fa-user-circle text-white mt-4" style="font-size:40px"></i> </p>
+                <a href="{% url 'index' %}"><p class="halfcircleBottom" style="font-size:20px">Create Account</p></a>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="box1">
+                <p class="halfcircle"><i class="text-center fas fa-user-circle text-white mt-4" style="font-size:40px"></i> </p>
+                <a href="{% url 'list' %}"><p class="halfcircleBottom" style="font-size:20px">Status Check</p></a>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="box1">
+                <p class="halfcircle"><i class="text-center fas fa-user-circle text-white mt-4" style="font-size:40px"></i> </p>
+                <a href="{% url 'salary' %}"><p class="halfcircleBottom" style="font-size:20px">Basic Salary</p></a>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="box1">
+                <p class="halfcircle"><i class="text-center fas fa-user-circle text-white mt-4" style="font-size:40px"></i> </p>
+                <a href="{% url 'delete' %}"><p class="halfcircleBottom" style="font-size:20px">Update Salary</p></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

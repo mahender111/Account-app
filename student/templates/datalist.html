@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<table class="table">
+  <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Age</th>
+        <th scope="col">Addarcard</th>
+        <th scope="col">Status</th>
+        <th scope="col">Accept </th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for data in dict %}
+    <tr>
+        <form action="/user/" method="POST">
+            {% csrf_token %}
+
+                <td>{{data.name}}</td>
+                <td>{{data.username}}</td>
+                <td>{{data.salary}}</td>
+                <td>{{data.age}}</td>
+                <td><img src="{{data.addarcard.url}}" alt="" height="100" width="200"></td>
+                <td>{{data.status}}</td>
+                {% if data.database %}
+                <input type="hidden" id="username" name="username" value = {{data.username}} >
+                <td><button type="submit" name="status" id="status">accept</button></td>
+                {% endif %}
+        </form>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
